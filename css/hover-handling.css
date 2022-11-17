@@ -1,0 +1,13 @@
+@media (hover: hover) {
+    .box p {
+        opacity: 0;
+    }
+
+    .box:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .box:hover .short-text{
+        opacity: 1;
+    }
+}
