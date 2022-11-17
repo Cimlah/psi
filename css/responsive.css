@@ -1,6 +1,7 @@
 @media (min-width: 800px) {
     main {
         padding-inline: 2rem 2rem;
+        gap: 2rem;
     }
 
     .popup {
