@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
+    --content-width: 60%;
+    --gradient: linear-gradient(0deg, rgba(3,24,44,1) 25%, rgba(130,26,26,1) 100%);
+    --popup-background: #223D65;
+
     font-family: 'Poppins', sans-serif;
     color: #FFFFFF;
 }
@@ -13,21 +17,9 @@
 
 body {
     width: 100vw;
-    height: 100vh;
-    background: rgb(3,24,44);
-    background: linear-gradient(0deg, rgba(3,24,44,1) 25%, rgba(130,26,26,1) 100%);
 
-    display: flex;
-    justify-content: center;
-}
-
-h1 {
-    font-size: 3.25rem;
-    text-shadow: 0px 0px 50px rgba(3,24,44,1);
-}
-
-button {
-    cursor: pointer;
+    background: rgba(3,24,44,1);
+    background: var(--gradient) fixed;
 }
 
 .italic {
@@ -35,16 +27,15 @@ button {
 }
 
 .bold {
-    font-weight: 700;
+    font-weight: 800;
 }
 
 main {
-    width: 60%;
-    height: 100%;
+    width: 100%;
+    padding: 1rem;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 2rem;
 }
@@ -52,59 +43,50 @@ main {
 .grid-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
-
-    padding: 1rem;
 }
 
 .box {
-    position: relative;
-    cursor: pointer;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
 
-    aspect-ratio: 1 / 1.2;
-    text-align: center;
+    position: relative;
+    aspect-ratio: 2 / 1;
+    gap: 0.5rem;
     background-color: rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    border-radius: 15px;
 }
 
-.short-text {
-    opacity: 0;
+.box h2 {
+    text-shadow: -2px 2px 5px black;
+}
+
+.box p {
+    text-shadow: -2px 2px 5px black;
 }
 
 .box img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    object-fit: cover;
-    z-index: -1;
-}
-
-@media (hover: hover) {
-    .box:hover {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    .box:hover .short-text{
-        opacity: 1;
-    }
-}
-
-
-.popup-section {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+
+
+.popup-section {
+    position: absolute;
     z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 
     display: none;
@@ -113,12 +95,12 @@ main {
 }
 
 .popup {
-    width: 50%;
-    background-color: #223D65;
-    color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0px 0px 20px 1px rgb(0, 0, 0);
-    padding: 2rem;
+    padding: 1rem;
+    margin: 1rem;
     border-radius: 10px;
+    background-color: var(--popup-background);
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 1);
 
     display: none;
     flex-direction: column;
@@ -134,33 +116,14 @@ main {
     border: none;
     border-radius: 15px;
     box-shadow: inset 0px 0px 10px -5px rgba(255, 255, 255, 0.9);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .comparison-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
-.comparison-grid h3, p {
-    padding: 1rem;
-}
-
-.comparison-grid h3 {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.9);
-}
-
-.comparison-grid p:nth-of-type(-n+3) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.9)
-}
-
-.comparison-grid h3:nth-of-type(-n+2) {
-    border-right: 1px solid rgba(255, 255, 255, 0.9);
-}
-
-.comparison-grid p:nth-of-type(1), .comparison-grid p:nth-of-type(2), .comparison-grid p:nth-of-type(4), .comparison-grid p:nth-of-type(5) {
-    border-right: 1px solid rgba(255, 255, 255, 0.9);
+.comparison-grid h2 {
+    display: none;
 }
