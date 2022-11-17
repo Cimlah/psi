@@ -1,5 +1,6 @@
 const popupSection = document.querySelector('.popup-section')
 const popup = document.querySelectorAll('.popup')
+const main = document.querySelector('main')
 
 const boxes = document.querySelectorAll('.box')
 
@@ -9,6 +10,7 @@ boxes.forEach((box, index) => {
 
     box.addEventListener('click', () => {
         popupSection.style.display = "flex"
+        main.style.display = "none"
         if(index == 0) {
             popup[0].style.display = "flex"
             popupHeading.innerHTML = "Co to jest hosting?"
@@ -34,5 +36,7 @@ closeButton.forEach((button) => {
         popup.forEach((popup) => {
             popup.style.display = "none"
         })
+
+        main.style.display = "flex"
     })
 })
