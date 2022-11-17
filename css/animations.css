@@ -1,0 +1,26 @@
+.popup {
+    animation: popupAnimation 0.3s ease-out 0.2s 1 forwards;
+}
+
+@keyframes popupAnimation {
+    0% {
+        transform: translateY(50vh);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (hover: hover) {
+    .hover:hover {
+        animation: hoverAnimation 0.2s ease-out 0s 1 forwards;
+    }
+
+    @keyframes hoverAnimation {
+        100% {
+            transform: translateY(-10px);
+        }
+    }
+}
